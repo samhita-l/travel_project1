@@ -72,7 +72,6 @@ permalink: /itinerary
     <br>
     <label for="richText">Activities:</label>
     <div id="richText"></div>
-
     <!-- Quill library -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
