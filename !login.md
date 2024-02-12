@@ -9,13 +9,13 @@ permalink: /login
 <div class="form-container">
     <h2 id="pageTitle">Login</h2>
     <form>
-        <input type="text" id="name" class="input" placeholder="Full Name"><br>
-        <input type="text" id="user" class="input" placeholder="Username"><br>
-        <input type="password" id="pass" class="input" placeholder="Password">
+        <input type="text" id="name" class="type" placeholder="Full Name"><br>
+        <input type="text" id="user" class="type" placeholder="Username"><br>
+        <input type="password" id="pass" class="type" placeholder="Password">
     </form>
     <button class="submit" onclick="signup()">Log In</button>
     <p id="error"></p>
-    <button onclick="switchToSignup()">Switch to Signup</button>
+    <button class="switch" onclick="switchToSignup()">Switch to Signup</button>
 </div>
 <script>
     function switchToSignup() {

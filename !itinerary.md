@@ -7,26 +7,13 @@ permalink: /itinerary
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <h1>Travel Itinerary</h1>
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-<style>
-    h1 {
-    text-align: center;
-    }
-    /* Add some styling for the surrounding box */
-    #container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    #daySelector {
-    font-size: 18px; 
-    }
-</style>
-
 </head>
 <body>
+<header class="header">
+    <button class="signup" onclick="home()" >Home</button>
+    <button class="login" onclick="weather()">Weather</button>
+    <button class="about" onclick="activities()">Activities</button>
+</header>
 <div id="container">
     <!--This allows the user to select the day they are planning activities for-->
     <label for="daySelector">Day:</label>
@@ -74,6 +61,7 @@ permalink: /itinerary
     <div id="richText"></div>
     <!-- Quill library -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="http://127.0.0.1:4200/travel_project/script.js"></script>
     <script>
     // Initialize Quill
     var quill = new Quill('#richText', {
