@@ -5,14 +5,14 @@ permalink: /itinerary
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <h1>Travel Itinerary</h1>
+  <h1 class='title'>Travel Itinerary</h1>
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
-    <button class="signup" onclick="home()" >Home</button>
-    <button class="login" onclick="weather()">Weather</button>
-    <button class="about" onclick="activities()">Activities</button>
+    <button class="signup" onclick="goHome()" >Home</button>
+    <button class="login" onclick="goWeather()">Weather</button>
+    <button class="about" onclick="goActivities()">Activities</button>
 </header>
 <div id="container">
     <!--This allows the user to select the day they are planning activities for-->
