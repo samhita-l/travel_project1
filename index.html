@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>San Diego Traveling</title>
+<style>
+    /*Style for header*/
+
+    .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    }
+    .header button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    }
+    .header button:hover {
+    background-color: black;
+    color: white;
+    }
+
+    /*style for index.md*/
+
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* White background */
+    }
+
+    .title-container {
+    background-image: url('https://files.catbox.moe/isgd9m.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    color: black; /* Black text */
+    padding: 50px 20px;
+    text-align: center;
+    }
+
+    .container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    }
+
+    .title {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Opaque white background */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    }
+
+    .subtitle {
+    margin-top: 30px;
+    text-align: center;
+    }
+
+    .paragraph {
+    margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<header class="header">
+    <button class="signup" onclick="signup()" >Signup</button>
+    <button class="login" onclick="login()">Login</button>
+    <button class="about" onclick="about()">About</button>
+</header>
+<div class="title-container">
+    <h1 class="title">San Diego Traveling</h1>
+</div>
+<div class="container">
+
+    <p class="paragraph">San Diego, known as "America’s Finest City," beckons travelers with its irresistible charm and myriad attractions. With a population of approximately 1.4 million, it's the eighth largest city in the U.S. and the second largest in California. The city's growth is fueled not only by its ideal climate and stunning beaches but also by its rich cultural heritage and diverse economy. Whether you're seeking adventure, relaxation, or cultural immersion, San Diego offers an unparalleled experience for visitors of all ages.</p>
+
+    <h2 class="subtitle">Fun Things to Do</h2>
+
+    <p class="paragraph">San Diego boasts an array of world-class attractions that promise endless fun and adventure. From historic landmarks like the Coronado Bridge, where Ronald Reagan made history, to quirky local laws like the prohibition on shooting jackrabbits from streetcars, there's no shortage of unique experiences to discover. Dive into the city's rich maritime history at the Birch Aquarium at Scripps or experience thrills on the Giant Dipper, the only roller coaster on the National Register of Historic Places. And don't miss the chance to sample San Diego's famous avocados, explore its 7,000 farms, or immerse yourself in the whimsical world of Dr. Seuss at UCSD's Geisel Library.</p>
+
+    <h2 class="subtitle">Culinary Delights</h2>
+
+    <p class="paragraph">No visit to San Diego is complete without indulging in its vibrant culinary scene. Known as the avocado capital of the U.S., the city offers an abundance of fresh and delicious fare, from farm-to-table dining to international cuisine. Whether you're craving seafood fresh from the Pacific Ocean or authentic Mexican tacos, San Diego has something to satisfy every palate. Be sure to explore the city's bustling food markets, trendy eateries, and world-class restaurants for a taste of the local flavor.</p>
+
+    <h2 class="subtitle">Beaches and Beyond</h2>
+
+    <p class="paragraph">With 70 miles of pristine shoreline, San Diego is a beach lover's paradise. Whether you're a surfer catching waves at Pacific Beach, a sunbather soaking up the rays at La Jolla Cove, or a nature enthusiast exploring the tide pools at Cabrillo National Monument, there's a beach for everyone in San Diego. And beyond its sandy shores, the city offers a wealth of outdoor adventures, from hiking in Torrey Pines State Natural Reserve to kayaking in Mission Bay. So pack your sunscreen and get ready to experience the best of San Diego's sun, surf, and sand.</p>
+</div>
+
+</body>
+<script>
+    function login() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/login";
+    }
+
+    function signup() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/signup";
+    }
+
+    function about() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/about";
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
