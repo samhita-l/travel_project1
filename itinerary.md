@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+---
+permalink: /itinerary
+---
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -82,4 +84,3 @@
 </div>
 
 </body>
-</html>
