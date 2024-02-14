@@ -105,4 +105,30 @@ var quill = new Quill('#activities', {
     theme: 'snow' // Use the 'snow' theme for rich text editing
 });
 
-//Updating
+//Updating text
+function itinerary() {
+    data = {
+        "uid": document.getElementById("uid").value,
+        "itinerary": document.getElementById("activities").value,
+    }
+    let options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(data)
+    }
+    fetch("http://127.0.0.1:8008/api/users/itinerary", options)
+        .then(response => {
+            let access = response.status !== 401 && response.status !== 403;
+            return response.json().then(data => ({ data, access }));
+        })
+        .then(({ data, access }) => {
+            console.log(access)
+            if (access) {
+                document.getElementById("data").textContent = "Data Successfully Changed";
+            } else {
+                document.getElementById("data").textContent = "Something went wrong";
+            }
+        })
+}

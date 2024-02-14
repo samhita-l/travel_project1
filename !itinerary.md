@@ -19,7 +19,7 @@ permalink: /itinerary
     <br>
     <br>
     <div id='itinerary-container'>
-        <!--This allows the user to select the day they are planning activities for-->
+        <!--This allows the user to select the day they are planning activities for
         <label for="day">Day:</label>
         <select id="day">
         <option value="Monday">Monday</option>
@@ -60,11 +60,15 @@ permalink: /itinerary
         <option value="12:00 AM">12:00 AM</option>
         </select>
         <br>
-        <br>
+        <br> -->
+        <label for='uid'>Usaername:</label>
+        <input id=uid>
         <label for="activities">Activities:</label>
-        <div id="activities"></div>
-        <!-- Quill library -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="http://127.0.0.1:4200/travel_project/script.js"></script>
+        <div id="activities"><!-- <input type="text" id="activities" >--></div>
+        <button id='submit' onclick='itinerary()'>Save</button>
+        <p id='itinerary'>
 </div>
 </body>
+<!-- Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="http://127.0.0.1:4200/travel_project/script.js"></script>
