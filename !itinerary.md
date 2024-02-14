@@ -66,11 +66,5 @@ permalink: /itinerary
         <!-- Quill library -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="http://127.0.0.1:4200/travel_project/script.js"></script>
-    <script>
-    // Initialize Quill
-    var quill = new Quill('#activities', {
-        theme: 'snow' // Use the 'snow' theme for rich text editing
-    });
-    </script>
 </div>
 </body>

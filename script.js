@@ -98,4 +98,11 @@ function login() {
     });
 }
 
-//
+//Itinerary code
+
+// Initialize Quill
+var quill = new Quill('#activities', {
+    theme: 'snow' // Use the 'snow' theme for rich text editing
+});
+
+//Updating
