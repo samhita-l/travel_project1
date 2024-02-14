@@ -1,0 +1,69 @@
+<!-- ---
+toc: true
+comments: false
+layout: post
+title: Weather
+description: Weather from San Diego
+type: hacks
+courses: { compsci: {week: 12} }
+--- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        /* Add your CSS styles here */
+        #weather-icon {
+            width: 200px; /* Adjust the size of the weather icon */
+            margin: 0 auto; /* Center the weather icon horizontally */
+            display: block;
+        }
+
+        #temperature {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <img src="" alt="Weather Icon" id="weather-icon">
+        <div id="temperature"></div>
+    </div>
+    <script>
+        function fetchWeatherData() {
+            fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/San%20Diego?unitGroup=us&include=current&key=8HDWUMHK5VWRJUG5CEQA5RNMQ&contentType=json")
+                .then(response => response.json())
+                .then(data => {
+                    const currentWeather = data.currentConditions;
+                    const temperature = data.currentConditions.temp;
+
+                    // Update weather icon based on current weather condition
+                    const weatherIcon = document.getElementById('weather-icon');
+                    if (currentWeather === 'Clear') {
+                        weatherIcon.src = 'sun.png';
+                    } else if (currentWeather === 'Partially Cloudy') {
+                        weatherIcon.src = 'cloud.png';
+                    } else if (currentWeather === 'Rain') {
+                        weatherIcon.src = 'rain.png';
+                    } else {
+                        weatherIcon.src = 'default.png'; // Default image for other conditions
+                    }
+
+                    // Display temperature
+                    document.getElementById('temperature').textContent = `Temperature: ${temperature}°F`;
+                })
+                .catch(error => console.error('Error fetching weather data:', error));
+        }
+
+        // Fetch weather data initially
+        fetchWeatherData();
+
+        // Refresh weather data every minute
+        setInterval(fetchWeatherData, 60000); // 60000 milliseconds = 1 minute
+    </script>
+</body>
+</html>
