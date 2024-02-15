@@ -20,6 +20,17 @@
   color: white;
 }
 
+// About tyle
+.about-title-container {
+  background-image: url('https://files.catbox.moe/isgd9m.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: black; /* Black text */
+  padding: 50px 20px;
+  text-align: center;
+}
+
 //style for home.md
 sandiego-background {
   font-family: Arial, sans-serif;
@@ -191,4 +202,15 @@ sandiego-background {
 #temperature {
     text-align: center;
     font-size: 24px;
+}
+
+// Map Styling
+#map-title-container {
+  background-image: url('https://files.catbox.moe/1jok89.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: black; /* Black text */
+  padding: 50px 20px;
+  text-align: center;
 }

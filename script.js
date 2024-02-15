@@ -20,12 +20,28 @@ function goHome() {
 function goWeather() {
     window.location.href = "http://127.0.0.1:4200/travel_project/weather";
 }
-function goActivities() {
-    window.location.href = "http://127.0.0.1:4200/travel_project/activities";
+function goMap() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/map";
 }
 function goItinerary() {
     window.location.href = "http://127.0.0.1:4200/travel_project/itinerary";
 }
+
+//Comments
+
+function addComment() {
+    var input = document.getElementById('comment-input');
+    var comment = input.value.trim();
+    if (comment) {
+      var commentsContainer = document.getElementById('comments');
+      var newComment = document.createElement('p');
+      newComment.textContent = comment;
+      commentsContainer.appendChild(newComment);
+      input.value = ''; // Clear input field
+    } else {
+      alert('Please enter a comment.');
+    }
+  }
 
 // Functions for signup and login
 
