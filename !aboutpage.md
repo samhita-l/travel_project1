@@ -10,9 +10,9 @@ permalink: /about
 </head>
 <body id='sandiego-background'>
 <header class="header">
+    <button class="about" onclick="gohomepage()">Home</button>
     <button class="signup" onclick="signup()" >Signup</button>
     <button class="login" onclick="login()">Login</button>
-    <button class="about" onclick="about()">About</button>
 </header>
 <div class="about-title-container">
     <h1 class="title">About</h1>

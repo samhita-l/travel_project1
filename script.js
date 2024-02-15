@@ -8,6 +8,9 @@ function getCookie(name) {
 
 // All of the functions that switch to a different page
 
+function gohomepage() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/index.html";
+}
 function goLogin() {
     window.location.href = "http://127.0.0.1:4200/travel_project/login";
 }

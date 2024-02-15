@@ -11,8 +11,8 @@ permalink: /weather
 <body class='sandiego-background'>
     <header class="header">
         <button class="signup" onclick="goHome()" >Home</button>
-        <button class="login" onclick="goWeather()">Weather</button>
-        <button class="about" onclick="goActivities()">Activities</button>
+        <button class="login" onclick="goMap()">Map</button>
+        <button class="about" onclick="goItinerary()">Itinerary</button>
     </header>
     <div id='weather-title-container'>
         <h1 class='title'>Weather</h1>
