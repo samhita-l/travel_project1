@@ -107,28 +107,61 @@ var quill = new Quill('#activities', {
 
 //Updating text
 function itinerary() {
-    data = {
-        "uid": document.getElementById("uid").value,
-        "itinerary": document.getElementById("activities").value,
-    }
+
+    let itinerary = document.getElementById("itinerary")
+
+    let data = {
+        "itinerary": itinerary
+    };
+    // Configure fetch options
     let options = {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
+            'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify(data)
-    }
-    fetch("http://127.0.0.1:8008/api/users/itinerary", options)
+        body: JSON.stringify(data),
+        credentials: 'include'
+    };
+    // Send the text data to the backend
+    fetch('http://127.0.0.1:4200/travel_backend/api/users/itinerary', options)
         .then(response => {
-            let access = response.status !== 401 && response.status !== 403;
-            return response.json().then(data => ({ data, access }));
-        })
-        .then(({ data, access }) => {
-            console.log(access)
-            if (access) {
-                document.getElementById("data").textContent = "Data Successfully Changed";
+            if (response.ok) {
+                // Handle successful submission
+                document.getElementById("error").innerHTML = "Itinerary updated!";
+                // Fetch updated images after submission
+                // getItinerary();
             } else {
-                document.getElementById("data").textContent = "Something went wrong";
+                // Handle submission error
+                return response.json().then(errorData => {
+                    if (errorData && errorData.message) {
+                        document.getElementById("error").innerHTML = errorData.message;
+                    } else {
+                        document.getElementById("error").innerHTML = "Error submitting itinerary";
+                    }
+                });
             }
         })
+        .catch(error => {
+            console.error("Error:", error);
+            document.getElementById("error").innerHTML = "Itinerary wasn't able to be updated.";
+        });
 }
+/* function getItinerary() {
+    let options = {
+        method: "GET",
+        headers: {
+            "Content-Type": 'application/json;charset=utf-8'
+        },
+        credentials: 'include'
+    };
+    fetch('http://127.0.0.1:4200/travel_backend/api/users/itinerary', options)
+        .then(response =>{
+            let access = response.status !== 403
+            return response.json().then(data => ({ data, access }));
+        })
+        .then(({ data, access })) => {
+            if (access) {
+                let 
+            }
+        }
+    } */

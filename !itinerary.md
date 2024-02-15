@@ -61,14 +61,12 @@ permalink: /itinerary
         </select>
         <br>
         <br> -->
-        <label for='uid'>Usaername:</label>
-        <input id=uid>
-        <label for="activities">Activities:</label>
-        <div id="activities"><!-- <input type="text" id="activities" >--></div>
+        <label for="itinerary">Activities:</label>
+        <input id='itinerary'>
+        <!-- <div id="activities"><input type="text" id="activities" ></div>-->
         <button id='submit' onclick='itinerary()'>Save</button>
-        <p id='itinerary'>
-</div>
-</body>
+        <p id='error'></p>
+        <p id='itinerary-output'>
 <!-- Quill library -->
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script src="http://127.0.0.1:4200/travel_project/script.js"></script>
