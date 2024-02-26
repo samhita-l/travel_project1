@@ -5,8 +5,6 @@ permalink: /map
 <body class='sandiego-background'>
     <header class="header">
         <button onclick="goHome()" >Home</button>
-        <button onclick="goWeather()">Weather</button>
-        <button onclick="goItinerary()">Itinerary</button>
     </header>
     <div id='map-title-container'>
         <h1 class='title'>Map of San Diego</h1>

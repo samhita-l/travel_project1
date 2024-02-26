@@ -198,5 +198,3 @@ function fetchItinerary() {
         // Handle error
     });
 }
-
-window.onload = fetchItinerary()

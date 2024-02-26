@@ -27,31 +27,39 @@ permalink: /activities
     }
 </style>
 </head>
-<body>
+<body class='sandiego-background'>
+    <header class="header">
+        <button onclick="goHome()" >Home</button>
+        <button onclick="goWeather()">Weather</button>
+        <button onclick="goItinerary()">Itinerary</button>
+    </header>
+
+<div id='activity-title-container'>
+    <h1 class='title'>Activities</h1>
+</div>
 
 <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for activities...">
-
-<table id="activityTable">
-    <thead>
-        <tr>
-            <th>Activity</th>
-            <th>Family Friendly</th>
-            <th>Adult</th>
-            <th>Indoors</th>
-            <th>Outdoors</th>
-        </tr>
-    </thead>
-    <tbody id="data-body">
-        <!-- Data will be populated here -->
-    </tbody>
-</table>
+    <table id="activity-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family Friendly</th>
+                <th>Adult Friendly</th>
+                <th>Indoors</th>
+                <th>Outdoors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be populated dynamically -->
+        </tbody>
+    </table>
 
 <script>
 function searchTable() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("activityTable");
+    table = document.getElementById("activity-table");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -67,13 +75,12 @@ function searchTable() {
     }
 }
 
-function fetchAllActivities() {
+function displayActivityTable() {
     let options = {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        credentials: 'include'
     };
     fetch("http://127.0.0.1:8086/api/activities/", options)
     .then(response => {
@@ -84,24 +91,29 @@ function fetchAllActivities() {
         }
     })
     .then(data => {
-        const headers = Object.keys(data[0]);
-        const dataBody = document.getElementById("data-body");
-        data.forEach(item => {
-            const row = document.createElement("tr");
-            headers.forEach(header => {
-                const cell = document.createElement("td");
-                cell.textContent = item[header];
-                row.appendChild(cell);
-            });
-            dataBody.appendChild(row);
+        const tableBody = document.querySelector("#activity-table tbody");
+        tableBody.innerHTML = ""; // Clear the existing table data
+        data.forEach(activity => {
+            const row = tableBody.insertRow();
+            const nameCell = row.insertCell(0);
+            const familyFriendlyCell = row.insertCell(1);
+            const adultFriendlyCell = row.insertCell(2);
+            const indoorsCell = row.insertCell(3);
+            const outdoorsCell = row.insertCell(4);
+                
+            nameCell.textContent = activity.name;
+            familyFriendlyCell.textContent = activity.family;
+            adultFriendlyCell.textContent = activity.adult;
+            indoorsCell.textContent = activity.indoors;
+            outdoorsCell.textContent = activity.outdoors;
         });
     })
     .catch(error => {
-        console.error('Error fetching data:', error);
-        // Handle error gracefully, for example:
-        alert('Error fetching data. Please try again later.');
+        console.error('Error:', error);
+        alert(error);
     });
 }
 
-window.onload = fetchAllActivities;
+
+window.onload = displayActivityTable;
 </script>
