@@ -23,6 +23,9 @@ function goHome() {
 function goWeather() {
     window.location.href = "http://127.0.0.1:4200/travel_project/weather";
 }
+function goActivities() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/activities";
+}
 function goMap() {
     window.location.href = "http://127.0.0.1:4200/travel_project/map";
 }

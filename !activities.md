@@ -25,6 +25,10 @@ permalink: /activities
         margin: 8px 0;
         box-sizing: border-box;
     }
+    img {
+            width: 20px; /* Adjust width as needed */
+            height: 20px; /* Adjust height as needed */
+        }
 </style>
 </head>
 <body class='sandiego-background'>
@@ -82,7 +86,7 @@ function displayActivityTable() {
             'Content-Type': 'application/json;charset=utf-8'
         },
     };
-    fetch("http://127.0.0.1:8086/api/activities/", options)
+    fetch("http://127.0.0.1:8086/api/activity/", options)
     .then(response => {
         if (response.ok) {
             return response.json();
@@ -91,27 +95,27 @@ function displayActivityTable() {
         }
     })
     .then(data => {
-        const tableBody = document.querySelector("#activity-table tbody");
-        tableBody.innerHTML = ""; // Clear the existing table data
-        data.forEach(activity => {
-            const row = tableBody.insertRow();
-            const nameCell = row.insertCell(0);
-            const familyFriendlyCell = row.insertCell(1);
-            const adultFriendlyCell = row.insertCell(2);
-            const indoorsCell = row.insertCell(3);
-            const outdoorsCell = row.insertCell(4);
+            const tableBody = document.querySelector("#activity-table tbody");
+            tableBody.innerHTML = ""; // Clear the existing table data
+            data.forEach(activity => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell(0);
+                const familyFriendlyCell = row.insertCell(1);
+                const adultFriendlyCell = row.insertCell(2);
+                const indoorsCell = row.insertCell(3);
+                const outdoorsCell = row.insertCell(4);
                 
-            nameCell.textContent = activity.name;
-            familyFriendlyCell.textContent = activity.family;
-            adultFriendlyCell.textContent = activity.adult;
-            indoorsCell.textContent = activity.indoors;
-            outdoorsCell.textContent = activity.outdoors;
+                nameCell.textContent = activity.name;
+                familyFriendlyCell.innerHTML = activity.family === "True" ? '<img src="https://files.catbox.moe/u818q8.png">' : '<img src="https://files.catbox.moe/jcffjn.png">';
+                adultFriendlyCell.innerHTML = activity.adult === "True" ? '<img src="https://files.catbox.moe/u818q8.png">' : '<img src="https://files.catbox.moe/jcffjn.png">';
+                indoorsCell.innerHTML = activity.indoors === "True" ? '<img src="https://files.catbox.moe/u818q8.png">' : '<img src="https://files.catbox.moe/jcffjn.png">';
+                outdoorsCell.innerHTML = activity.outdoors === "True" ? '<img src="https://files.catbox.moe/u818q8.png">' : '<img src="https://files.catbox.moe/jcffjn.png">';
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(error);
         });
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert(error);
-    });
 }
 
 

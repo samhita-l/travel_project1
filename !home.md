@@ -16,7 +16,7 @@ permalink: /home
       <span class="button-text">Weather</span>
     </button>
     <button class="button activities-button" onclick='goActivities()'>
-      <img src="https://files.catbox.moe/oaapzm.png" alt="Activities">
+      <img src="https://files.catbox.moe/8uvnzn.png" alt="Activities">
       <span class="button-text">Activities</span>
     </button>
     <button class="button itinerary-button" onclick='goItinerary()'>
