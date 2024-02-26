@@ -23,10 +23,10 @@ permalink: /itinerary
         <form>
             <textarea id="itinerary" class="input" placeholder="(Day), (Time): (Activity)"></textarea><br>
         </form>
-        <button class="itinerary-button" onclick="itinerary()">New Entry</button>
+        <button class="itinerary-buttons" onclick="itinerary()">New Entry</button>
         <br>
         <br>
-        <button class="itinerary-button" onclick="fetchItinerary()">Load Itinerary</button>
+        <button class="itinerary-buttons" onclick="fetchItinerary()">Load Itinerary</button>
         <p id="error"></p>
     <div class="data-container">
         <h2 id='subtitle'>Your Itinerary:</h2>
