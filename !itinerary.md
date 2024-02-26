@@ -9,9 +9,9 @@ permalink: /itinerary
 </head>
 <body class='sandiego-background'>
     <header class="header">
-        <button class="signup" onclick="goHome()" >Home</button>
-        <button class="login" onclick="goWeather()">Weather</button>
-        <button class="about" onclick="goActivities()">Activities</button>
+        <button onclick="goHome()" >Home</button>
+        <button onclick="goWeather()">Weather</button>
+        <button onclick="goActivities()">Activities</button>
     </header>
     <div id='itinerary-title-container'>
         <h1 class='title'>Travel Itinerary</h1>

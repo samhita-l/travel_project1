@@ -10,9 +10,9 @@ permalink: /weather
 </head>
 <body class='sandiego-background'>
     <header class="header">
-        <button class="signup" onclick="goHome()" >Home</button>
-        <button class="login" onclick="goMap()">Map</button>
-        <button class="about" onclick="goItinerary()">Itinerary</button>
+        <button onclick="goHome()" >Home</button>
+        <button onclick="goMap()">Map</button>
+        <button onclick="goItinerary()">Itinerary</button>
     </header>
     <div id='weather-title-container'>
         <h1 class='title'>Weather</h1>
@@ -48,5 +48,14 @@ permalink: /weather
         fetchWeatherData();
         // Refresh weather data every minute
         setInterval(fetchWeatherData, 60000); // 60000 milliseconds = 1 minute
+function goHome() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/home";
+}
+function goMap() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/map";
+}
+function goItinerary() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/itinerary";
+}
 </script>
 </body>

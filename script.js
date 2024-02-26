@@ -31,7 +31,6 @@ function goItinerary() {
 }
 
 //Comments
-
 function addComment() {
     var input = document.getElementById('comment-input');
     var comment = input.value.trim();
@@ -47,7 +46,6 @@ function addComment() {
   }
 
 // Functions for signup and login
-
 function signup() {
     data = {
         "name": document.getElementById("name").value,
@@ -166,55 +164,27 @@ function itinerary() {
         });
 }
 function fetchItinerary() {
-let options = {
-method: 'GET',
-headers: {
-    'Content-Type': 'application/json;charset=utf-8'
-},
-credentials: 'include'
-};
-fetch("http://127.0.0.1:8086/api/users/itinerary", options)
-.then(response => {
-    if (response.ok) {
-        return response.json();
-    } else {
-        throw new Error('Network response was not ok.');
-    }
-})
-.then(data => {
-    let dataContainer = document.getElementById("data");
-    dataContainer.textContent = data;  // Assuming 'data' is the property you want to display
-})
-.catch(error => {
-    console.error('Error fetching itinerary:', error);
-    // Handle error
-});
-}
-
-//Weather JavaScript
-function fetchWeatherData() {
-    fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/San%20Diego?unitGroup=us&include=current&key=8HDWUMHK5VWRJUG5CEQA5RNMQ&contentType=json")
-    .then(response => response.json())
-    .then(data => {
-        const currentWeather = data.currentConditions;
-        const temperature = data.currentConditions.temp;
-        // Update weather icon based on current weather condition
-        const weatherIcon = document.getElementById('weather-icon');
-        if (currentWeather === 'Clear') {
-            weatherIcon.src = 'weather/sun.png';
-        } else if (currentWeather === 'Partially Cloudy') {
-            weatherIcon.src = 'weather/partlycloudy.png';
-        } else if (currentWeather === 'Rain') {
-            weatherIcon.src = 'weather/rain.png';
-        } /* else {
-            weatherIcon.src = 'weather/default.png'; // Default image for other conditions
-        } */
-        // Display temperature
-        document.getElementById('temperature').textContent = `Temperature: ${temperature}°F`;
+    let options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+    },
+    credentials: 'include'
+    };
+    fetch("http://127.0.0.1:8086/api/users/itinerary", options)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
     })
-    .catch(error => console.error('Error fetching weather data:', error));
-}
-    // Fetch weather data initially
-    fetchWeatherData();
-    // Refresh weather data every minute
-    setInterval(fetchWeatherData, 60000); // 60000 milliseconds = 1 minute
+    .then(data => {
+        let dataContainer = document.getElementById("data");
+        dataContainer.textContent = data;  // Assuming 'data' is the property you want to display
+    })
+    .catch(error => {
+        console.error('Error fetching itinerary:', error);
+        // Handle error
+    });
+    }
