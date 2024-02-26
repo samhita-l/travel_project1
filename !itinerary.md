@@ -19,15 +19,19 @@ permalink: /itinerary
     <br>
     <br>
     <div class="itinerary-container">
-        <h2 id="subtitle">Itinerary:</h2>
+        <h2 id="subtitle">Planning:</h2>
         <form>
-            <textarea id="itinerary" class="input" placeholder="Start planning your itinerary here!"></textarea><br>
+            <textarea id="itinerary" class="input" placeholder="(Day), (Time): (Activity)"></textarea><br>
         </form>
-        <button class="submit" onclick="itinerary()">Save</button>
+        <button class="itinerary-button" onclick="itinerary()">New Entry</button>
+        <br>
+        <br>
+        <button class="itinerary-button" onclick="fetchItinerary()">Load Itinerary</button>
         <p id="error"></p>
     <div class="data-container">
         <h2 id='subtitle'>Your Itinerary:</h2>
         <div id="data"></div>
     </div>
     </div>
-<script src="http://127.0.0.1:4200/travel_project/script.js"></script>
+<script src="http://127.0.0.1:4200/travel_project/script.js">
+</script>

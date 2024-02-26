@@ -179,12 +179,24 @@ function fetchItinerary() {
             throw new Error('Network response was not ok.');
         }
     })
-    .then(data => {
+    .then(response => {
         let dataContainer = document.getElementById("data");
-        dataContainer.textContent = data;  // Assuming 'data' is the property you want to display
+        // Clear previous data
+        dataContainer.innerHTML = "";
+        // Split the data by "///" to get individual itinerary items
+        let itineraryItems = response.split("///");
+        // Iterate over each item and create a row for display
+        itineraryItems.forEach(item => {
+            let row = document.createElement("div");
+            row.textContent = item.trim(); // Trim to remove any extra whitespace
+            // Append row to the container
+            dataContainer.appendChild(row);
+        });
     })
     .catch(error => {
         console.error('Error fetching itinerary:', error);
         // Handle error
     });
-    }
+}
+
+window.onload = fetchItinerary()
