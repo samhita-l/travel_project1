@@ -5,31 +5,7 @@ permalink: /activities
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Search Table</title>
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    input[type=text] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-    }
-    img {
-            width: 20px; /* Adjust width as needed */
-            height: 20px; /* Adjust height as needed */
-        }
-</style>
+<title>Activities</title>
 </head>
 <body class='sandiego-background'>
     <header class="header">
