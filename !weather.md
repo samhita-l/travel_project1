@@ -51,8 +51,8 @@ permalink: /weather
 function goHome() {
     window.location.href = "http://127.0.0.1:4200/travel_project/home";
 }
-function goMap() {
-    window.location.href = "http://127.0.0.1:4200/travel_project/map";
+function goActivities() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/activities";
 }
 function goItinerary() {
     window.location.href = "http://127.0.0.1:4200/travel_project/itinerary";
