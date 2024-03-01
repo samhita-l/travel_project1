@@ -63,7 +63,7 @@ function displayActivityTable() {
         },
     };
     fetch("https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/activity/", options)
-    // LocaL: http://127.0.0.1:8086/api/activity/
+    // LocaL: http://127.0.0.1:8010/api/activity/
     .then(response => {
         if (response.ok) {
             return response.json();
