@@ -62,7 +62,8 @@ function displayActivityTable() {
             'Content-Type': 'application/json;charset=utf-8'
         },
     };
-    fetch("http://127.0.0.1:8086/api/activity/", options)
+    fetch("https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/activity/", options)
+    // LocaL: http://127.0.0.1:8086/api/activity/
     .then(response => {
         if (response.ok) {
             return response.json();
