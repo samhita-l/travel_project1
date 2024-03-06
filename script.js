@@ -63,8 +63,9 @@ function signup() {
     },
     body: JSON.stringify(data)
 }
-    let sign_up = fetch('https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/', options);
+    let sign_up = fetch('http://127.0.0.1:8010/api/users/', options);
     // Local: http://127.0.0.1:8010/api/users/
+    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/
     sign_up.then(response => {
         if (response.status === 200) {
             window.location.href = "http://127.0.0.1:4200/travel_project/login"
@@ -90,8 +91,9 @@ function login() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/authenticate', OPTIONS)
+    fetch('http://127.0.0.1:8010/api/users/authenticate', OPTIONS)
     // LocaL: http://127.0.0.1:8010/api/users/authenticate
+    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/authenticate
     .then(response => {
         if (response.ok) {
             // Handle successful login
@@ -140,8 +142,9 @@ function itinerary() {
         credentials: 'include'
     };
     // Send the text data to the backend
-    fetch('https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary', options)
+    fetch('http://127.0.0.1:8010/api/users/itinerary', options)
     // LocaL: http://127.0.0.1:8010/api/users/itinerary
+    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary
         .then(response => {
             if (response.ok) {
                 // Handle successful submission
@@ -172,8 +175,9 @@ function fetchItinerary() {
     },
     credentials: 'include'
     };
-    fetch("https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary", options)
+    fetch("http://127.0.0.1:8010/api/users/itinerary", options)
     // Local: http://127.0.0.1:8010/api/users/itinerary
+    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary
     .then(response => {
         if (response.ok) {
             return response.json();
