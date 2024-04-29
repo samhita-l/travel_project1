@@ -63,8 +63,8 @@ function signup() {
     },
     body: JSON.stringify(data)
 }
-    let sign_up = fetch('http://127.0.0.1:8010/api/users/', options);
-    // Local: http://127.0.0.1:8010/api/users/
+    let sign_up = fetch('http://127.0.0.1:8086/api/users/', options); // Update port to 8086
+    // Local: http://127.0.0.1:8086/api/users/
     // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/
     sign_up.then(response => {
         if (response.status === 200) {
@@ -91,8 +91,8 @@ function login() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('http://127.0.0.1:8010/api/users/authenticate', OPTIONS)
-    // LocaL: http://127.0.0.1:8010/api/users/authenticate
+    fetch('http://127.0.0.1:8086/api/users/authenticate', OPTIONS) // Update port to 8086
+    // LocaL: http://127.0.0.1:8086/api/users/authenticate
     // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/authenticate
     .then(response => {
         if (response.ok) {
@@ -119,88 +119,5 @@ function login() {
     })
     .catch(error => {
         console.error("Error:", error);
-    });
-}
-
-//Itinerary code
-
-//Updating text
-function itinerary() {
-    // Get the text content from the textarea
-    let text = document.getElementById("itinerary").value;
-    // Create an object with the text data and a unique UID (timestamp)
-    let data = {
-        "itinerary": text
-    };
-    // Configure fetch options
-    let options = {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data),
-        credentials: 'include'
-    };
-    // Send the text data to the backend
-    fetch('http://127.0.0.1:8010/api/users/itinerary', options)
-    // LocaL: http://127.0.0.1:8010/api/users/itinerary
-    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary
-        .then(response => {
-            if (response.ok) {
-                // Handle successful submission
-                document.getElementById("error").innerHTML = "Itinerary updated!";
-                // Fetch updated images after submission
-                fetchItinerary()
-            } else {
-                // Handle submission error
-                return response.json().then(errorData => {
-                    if (errorData && errorData.message) {
-                        document.getElementById("error").innerHTML = errorData.message;
-                    } else {
-                        document.getElementById("error").innerHTML = "Error submitting itinerary";
-                    }
-                });
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            document.getElementById("error").innerHTML = "Error submitting itinerary";
-        });
-}
-function fetchItinerary() {
-    let options = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-    },
-    credentials: 'include'
-    };
-    fetch("http://127.0.0.1:8010/api/users/itinerary", options)
-    // Local: http://127.0.0.1:8010/api/users/itinerary
-    // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/itinerary
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Network response was not ok.');
-        }
-    })
-    .then(response => {
-        let dataContainer = document.getElementById("data");
-        // Clear previous data
-        dataContainer.innerHTML = "";
-        // Split the data by "///" to get individual itinerary items
-        let itineraryItems = response.split("///");
-        // Iterate over each item and create a row for display
-        itineraryItems.forEach(item => {
-            let row = document.createElement("div");
-            row.textContent = item.trim(); // Trim to remove any extra whitespace
-            // Append row to the container
-            dataContainer.appendChild(row);
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching itinerary:', error);
-        // Handle error
     });
 }
