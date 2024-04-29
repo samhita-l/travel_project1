@@ -32,6 +32,9 @@ function goMap() {
 function goItinerary() {
     window.location.href = "http://127.0.0.1:4200/travel_project/itinerary";
 }
+function goTracker() {
+    window.location.href = "http://127.0.0.1:4200/travel_project/tracker"
+}
 
 //Comments
 function addComment() {
@@ -91,8 +94,8 @@ function login() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('http://127.0.0.1:8086/api/users/authenticate', OPTIONS) // Update port to 8086
-    // LocaL: http://127.0.0.1:8086/api/users/authenticate
+    fetch('http://127.0.0.1:4200/api/users/authenticate', OPTIONS) // Update port to 8086
+    // LocaL: http://127.0.0.1:4200/api/users/authenticate
     // Deployed: https://SanDiegoTravel.stu.nighthawkcodingsociety.com/api/users/authenticate
     .then(response => {
         if (response.ok) {

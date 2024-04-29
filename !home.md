@@ -19,6 +19,10 @@ permalink: /home
       <img src="https://files.catbox.moe/8uvnzn.png" alt="Activities">
       <span class="button-text">Activities</span>
     </button>
+    <button class="button tracker-button" onclick='goTracker()'>
+      <img src="https://files.catbox.moe/yv91bj.png" alt="Tracker">
+      <span class="button-text">Time Tracker</span>
+    </button>
     <button class="button itinerary-button" onclick='goItinerary()'>
       <img src="https://files.catbox.moe/1m85ow.png" alt="Itinerary">
       <span class="button-text">Itinerary</span>
