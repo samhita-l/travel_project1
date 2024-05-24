@@ -16,8 +16,10 @@ permalink: /activities
 
 <div id='activity-title-container'>
     <h1 class='title'>Activities</h1>
+    <a href="/CPT-project/_posts/activitylist.html">
+    <h1>Activity List</h1>
+</a>
 </div>
-
 <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for activities...">
     <table id="activity-table">
         <thead>
