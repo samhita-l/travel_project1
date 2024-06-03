@@ -3,24 +3,23 @@ permalink: /activities
 ---
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Activities</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
 </head>
 <body class='sandiego-background'>
     <header class="header">
-        <button onclick="goHome()" >Home</button>
+        <button onclick="goHome()">Home</button>
         <button onclick="goWeather()">Weather</button>
         <button onclick="goItinerary()">Itinerary</button>
     </header>
-
-<div id='activity-title-container'>
-    <h1 class='title'>Activities</h1>
-    <a href="/CPT-project/_posts/activitylist.html">
-    <h1>Activity List</h1>
-</a>
-</div>
-<input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for activities...">
+    <div id='activity-title-container'>
+        <h1 class='title'>Activities</h1>
+        <a href="/CPT-project/_posts/activitylist.html">
+            <h1>Activity List</h1>
+        </a>
+    </div>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for activities...">
     <table id="activity-table">
         <thead>
             <tr>
@@ -35,7 +34,6 @@ permalink: /activities
             <!-- Table body will be populated dynamically -->
         </tbody>
     </table>
-
 <script>
 function searchTable() {
     var input, filter, table, tr, td, i, txtValue;
@@ -45,7 +43,7 @@ function searchTable() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0]; // Change index to match the column you want to search
+        td = tr[i].getElementsByTagName("td")[0]; 
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -76,7 +74,7 @@ function displayActivityTable() {
     })
     .then(data => {
             const tableBody = document.querySelector("#activity-table tbody");
-            tableBody.innerHTML = ""; // Clear the existing table data
+            tableBody.innerHTML = ""; 
             data.forEach(activity => {
                 const row = tableBody.insertRow();
                 const nameCell = row.insertCell(0);
@@ -100,12 +98,12 @@ function displayActivityTable() {
 window.onload = displayActivityTable;
 
 function goHome() {
-    window.location.href = "http://127.0.0.1:4200/travel_project/home";
+    window.location.href = "http://127.0.0.1:8000/travel_project/home.html";
 }
 function goWeather() {
-    window.location.href = "http://127.0.0.1:4200/travel_project/weather";
+    window.location.href = "http://127.0.0.1:8000/travel_project/weather.html";
 }
 function goItinerary() {
-    window.location.href = "http://127.0.0.1:4200/travel_project/itinerary";
+    window.location.href = "http://127.0.0.1:8000/travel_project/itinerary.html";
 }
 </script>
