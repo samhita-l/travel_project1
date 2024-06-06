@@ -16,7 +16,7 @@ permalink: /activities
 
 <div id='activity-title-container'>
     <h1 class='title'>Activities</h1>
-    <a href="/CPT-project/_posts/activitylist.html">
+    <a href="file://wsl.localhost/Ubuntu-22.04/home/sumi/vscode/travel_project1/CPT-project/_posts/activitylist.html">
     <h1>Activity List</h1>
 </a>
 </div>
